@@ -1,0 +1,25 @@
+<div class="jumbotron jumbotron-fluid my-jumbotron ">
+    <div class="container">
+        <h1 class="display-4">Star Wars Heroes</h1>
+        <p class="lead">Thanks to swapi.co</p>
+    </div>
+</div>
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-12">
+
+            <app-heroes [users]="users"></app-heroes>
+        </div>
+        <div class="col-12">
+            <nav aria-label="" class="my-pagination">
+                <ul class="pagination  justify-content-center">
+
+                    <li class="page-item"> <button [disabled]="this.page == 1" class="page-link " (click)="prevP()">Previous</button></li>
+                    <li *ngFor="let num of count" class="page-item " [ngClass]="this.page == (num + 1)? 'active':''"><button class="page-link" (click)="testing(num + 1)">{{num + 1}}</button></li>
+                    <li class="page-item"><button class="page-link " (click)="nextP()" [disabled]="this.page == this.count.length">Next</button></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
